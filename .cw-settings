@@ -1,0 +1,13 @@
+{
+  "contextRoot": "/api/hello/you",
+  "internalPort": "9000",
+  "healthCheck": "",
+  "watchedFiles": {
+    "includeFiles": [
+      ""
+    ],
+    "excludeFiles": [
+      ""
+    ]
+  }
+}
