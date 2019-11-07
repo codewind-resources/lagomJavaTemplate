@@ -1,5 +1,5 @@
 {
-  "contextRoot": "/api/hello/you",
+  "contextRoot": "/api/hello/codewind",
   "internalPort": "9000",
   "healthCheck": "",
   "watchedFiles": {
