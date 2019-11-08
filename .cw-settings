@@ -1,13 +1,5 @@
 {
   "contextRoot": "/api/hello/codewind",
   "internalPort": "9000",
-  "healthCheck": "",
-  "watchedFiles": {
-    "includeFiles": [
-      ""
-    ],
-    "excludeFiles": [
-      ""
-    ]
-  }
+  "healthCheck": ""
 }
