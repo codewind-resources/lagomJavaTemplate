@@ -1,8 +1,11 @@
 FROM maven:3.5.4-jdk-8-alpine AS builder
 COPY pom.xml .
+COPY hello-api/pom.xml hello-api/
+COPY hello-impl/pom.xml hello-impl/
+RUN mvn dependency:go-offline package
 COPY hello-api hello-api/
 COPY hello-impl hello-impl/
-RUN mvn install -DskipTests
+RUN mvn install -DskipTests --offline
 
 FROM fabric8/java-alpine-openjdk8-jre
 RUN apk add --no-cache nss
