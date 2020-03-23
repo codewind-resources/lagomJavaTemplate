@@ -1,8 +1,11 @@
 FROM maven:3.5.4-jdk-8-alpine AS builder
-COPY pom.xml .
+COPY pom.xml settings.xml ./
 COPY hello-api/pom.xml hello-api/
 COPY hello-impl/pom.xml hello-impl/
-RUN mvn dependency:go-offline package
+RUN mkdir /root/.m2/ \
+    && mv settings.xml /root/.m2/ \
+    && mvn dependency:go-offline package \
+    && rm /root/.m2/settings.xml
 COPY hello-api hello-api/
 COPY hello-impl hello-impl/
 RUN mvn install -DskipTests --offline
